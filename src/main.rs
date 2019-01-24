@@ -25,7 +25,7 @@ fn extract_item(item: Json<String>) -> HttpResponse {
     HttpResponse::Ok().json(item.0) // <- send response
 }
 
-fn index(req: &HttpRequest) -> String {
+pub fn index(req: &HttpRequest) -> String {
     format!("Hello {}", "Anonymous")
 }
 
@@ -53,4 +53,27 @@ fn main() {
 
     println!("Started http server: 127.0.0.1:8080");
     let _ = sys.run();
+}
+
+#[cfg(test)]
+mod tests {
+    use actix_web::{HttpRequest, HttpMessage};
+    use actix_web::test::TestServer;
+    use std::str;
+    use actix_web::client::ClientResponse;
+
+    #[test]
+    fn base() {
+        // start new test server
+        let mut srv = TestServer::new(|app| app.handler(super::index));
+
+        let request = srv.get().finish().unwrap();
+        let response: ClientResponse = srv.execute(request.send()).unwrap();
+        assert!(response.status().is_success());
+
+        let bytes = srv.execute(response.body()).unwrap();
+        let body = str::from_utf8(&bytes).unwrap();
+        assert_eq!(body, "Hello Anonymous");
+        assert!(response.headers().contains_key("x-openrtb-version"));
+    }
 }

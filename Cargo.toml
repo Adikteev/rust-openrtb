@@ -1,5 +1,5 @@
 [package]
-name = "rust-openrtb"
+name = "rust_openrtb"
 version = "0.1.0"
 authors = ["Guillaume Balaine <igosuki@gmail.com>"]
 edition = "2018"
