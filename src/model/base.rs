@@ -1,5 +1,6 @@
 use serde_json::{Value};
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct BidRequest {
     id: String,
@@ -19,6 +20,7 @@ pub struct BidRequest {
     regs: Regs,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Imp {
     id: String,
@@ -36,6 +38,7 @@ pub struct Imp {
     pmp: Pmp,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Banner {
     w: i32,
@@ -55,6 +58,7 @@ pub struct Banner {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Video {
     mimes: Vec<String>,
@@ -81,6 +85,7 @@ pub struct Video {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Native {
     request: String,
@@ -90,6 +95,7 @@ pub struct Native {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Site {
     id: String,
@@ -110,6 +116,7 @@ pub struct Site {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct App {
     id: String,
@@ -129,6 +136,7 @@ pub struct App {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Publisher {
     id: String,
@@ -138,6 +146,7 @@ pub struct Publisher {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Content {
     id: String,
@@ -162,6 +171,7 @@ pub struct Content {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Producer {
     id: String,
@@ -171,6 +181,7 @@ pub struct Producer {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Device {
     ua: String,
@@ -205,6 +216,7 @@ pub struct Device {
 }
 
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Geo {
     lat: f32,
@@ -221,6 +233,7 @@ pub struct Geo {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct User {
     id: String,
@@ -234,6 +247,7 @@ pub struct User {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Data {
     id: String,
@@ -243,6 +257,7 @@ pub struct Data {
 }
 
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Segment {
     id: String,
@@ -251,12 +266,14 @@ pub struct Segment {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Regs {
     coppa: i8,
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Pmp {
     private_auction: i8,
@@ -264,6 +281,7 @@ pub struct Pmp {
     ext: Value,
 }
 
+#[derive(Debug, Serialize, Deserialize)]
 #[allow(dead_code)]
 pub struct Deal {
     id: String,
